@@ -1,0 +1,9 @@
+# OS
+.DS_Store
+
+# Development
+node_modules
+.build
+.env
+package-lock.json
+

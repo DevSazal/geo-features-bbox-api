@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2018",
+    "moduleResolution": "node",
+    "types": ["node", "jest"],
+    "rootDir": "src",
+    "sourceMap": true,
+    "outDir": ".build",
+    "baseUrl": "./",
+    "paths": {
+      "*": ["node_modules/*", "src/types/*"],
+    }
+  },
+  "ts-node": {
+    "transpileOnly": false,
+    "files": true,
+  },
+  "include": ["./src/**/*"]
+}
