@@ -1,3 +1,4 @@
+import { GeoResponseDTO } from '../dto/geo.dto';
 import osmtogeojson from 'osmtogeojson';
 
 /**
@@ -7,7 +8,7 @@ import osmtogeojson from 'osmtogeojson';
  * @param {Object} osm
  * @return {Object} geoJSON
  */
-export const geoJsonConverter = async (osm: object) => {
+export const geoJsonConverter = async (osm: object): Promise<GeoResponseDTO> => {
   try {
     const geoJSON = osmtogeojson(osm);
     return geoJSON;

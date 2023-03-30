@@ -8,10 +8,10 @@
 * Git
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community) optional.
 
-#### 🎁 If you are a fan of docker, then pull the [docker image](https://hub.docker.com/r/sazal) by following the commands:
+#### 🎁 If you are a big fan of docker, just don't wait and pull the [docker image](https://hub.docker.com/r/sazal/ts-geofeatures-bbox-backend) by following the commands:
 
 ```bash
-docker pull sazal/<app>
+docker pull sazal/ts-geofeatures-bbox-backend:1.0.0.RELEASE
 ```
 
 
@@ -19,10 +19,32 @@ Let's clone the repository on your machine.
 
 The application includes the following files and folders.
 
-- `src` - Code for the application written in TypeScript, Express.js.
-- `cli` - Node cli script which can be performed from terminal.
+- `src` - code for the application written in TypeScript, Express.js.
+- `cli` - node cli script which can be performed from terminal.
 - `__tests__` - to test all the features.
-- `.env.example` - A sample of .env which can be helpful for configuration.
+- `.env.example` - a sample of .env which can be helpful for configuration.
+
+```bash
+# architecture
+# deep drive in src directory
+src/
+├── controllers/
+│   └── geo.controller.ts
+├── routes/
+│   └── geo.ts
+├── services/
+│   ├── geo.ts
+│   └── openstreetmap.ts
+├── dto/
+│   └── geo.dto.ts
+├── types/
+│   └── index.ts
+├── lib/
+│   └── helpers.ts
+├── app.ts
+└── index.ts
+
+```
 
 
 ## Installation and Configuration
@@ -98,6 +120,10 @@ npm run test
 ```
 
 #### 🥇 Congrats!! You are good to go
+
+#### 🧑‍💻 Stay in touch
+
+- Author - [Sazal Ahamed](https://sazal.vercel.app)
 
 #### tada! 🎉
 
