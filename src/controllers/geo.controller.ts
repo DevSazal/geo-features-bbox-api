@@ -1,10 +1,10 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { boundingBoxValidator } from '../services/geo';
 import { geoJsonConverter } from '../lib/helpers';
 import { GeoResponseDTO } from '../dto/geo.dto';
 import { openStreetMapApi } from '../services/openstreetmap';
 
-export const getGeoFeatures = async (request: Request, response: Response) => {
+export const getGeoFeatures = async (request: Request, response: Response, next: NextFunction) => {
   try {
     const { bbox } = request.query;
     const { errors } = await boundingBoxValidator(bbox as string);
@@ -18,6 +18,6 @@ export const getGeoFeatures = async (request: Request, response: Response) => {
 
     return response.json(geoJSON);
   } catch (error) {
-    return response.status(500).json({ error: 'Internal Server Error!' });
+    next(error);
   }
 };

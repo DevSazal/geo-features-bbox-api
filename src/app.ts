@@ -1,4 +1,5 @@
 import express, { Express } from 'express';
+import { exceptionHandler } from './lib/HttpException';
 import { json } from 'body-parser';
 
 import { geoAPI } from './routes/geo';
@@ -10,5 +11,8 @@ app.use(json());
 
 // initialize routes
 app.use(geoAPI);
+
+// handle exception
+app.use(exceptionHandler);
 
 export { app };
